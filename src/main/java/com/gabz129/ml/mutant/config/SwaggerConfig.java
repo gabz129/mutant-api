@@ -27,6 +27,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .useDefaultResponseMessages(false)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.gabz129.ml.mutant.controller"))
                 .paths(PathSelectors.ant("/api/*"))

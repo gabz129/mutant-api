@@ -53,7 +53,9 @@ public class MutantController {
     @ApiOperation(value = "Receive a list of DNAs and checks if its a mutant", response = ResponseEntity.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "DNA is a mutant"),
-            @ApiResponse(code = 403, message = "DNA is not a mutant")})
+            @ApiResponse(code = 400, message = "Bad Request"),
+            @ApiResponse(code = 403, message = "DNA is not a mutant"),
+            @ApiResponse(code = 500, message = "Internal Error")})
     @RequestMapping(value = "/mutant",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -75,6 +77,9 @@ public class MutantController {
     @RequestMapping(value = "/stats",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiResponses(value = {
+            @ApiResponse(code = 400, message = "Bad Request"),
+            @ApiResponse(code = 500, message = "Internal Error")})
     public ResponseEntity reportDna() {
         LOGGER.debug("Generating report");
         return ResponseEntity.status(HttpStatus.OK)
