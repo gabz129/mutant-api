@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<ruleset name="Custom ruleset" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>Rulesets for project</description>
+    <!-- Complete rulesets -->
+    <rule ref="rulesets/java/strings.xml"/>
+    <rule ref="rulesets/java/basic.xml"/>
+    <rule ref="rulesets/java/braces.xml"/>
+    <rule ref="rulesets/java/empty.xml"/>
+    <rule ref="rulesets/java/imports.xml"/>
+    <rule ref="rulesets/java/migrating.xml"/>
+    <!-- rule ref="rulesets/java/strictexception.xml" /-->
+    <rule ref="rulesets/java/sunsecure.xml"/>
+    <rule ref="rulesets/java/unnecessary.xml"/>
+    <!--Unused Code restrictions-->
+    <rule ref="rulesets/java/unusedcode.xml"/>
+    <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateField"/>
+    <rule ref="rulesets/java/unusedcode.xml/UnusedLocalVariable"/>
+    <rule ref="rulesets/java/unusedcode.xml/UnusedFormalParameter"/>
+    <rule ref="rulesets/java/unusedcode.xml/UnusedModifier"/>
+    <!--Import rulesets -->
+    <rule ref="rulesets/java/imports.xml/TooManyStaticImports">
+        <properties>
+            <property name="maximumStaticImports" value="10"/>
+        </properties>
+    </rule>
+    <!--Literals restrictions-->
+    <rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals">
+        <properties>
+            <property name="maxDuplicateLiterals" value="5"/>
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/ConsecutiveLiteralAppends">
+        <properties>
+            <property name="threshold" value="2"/>
+        </properties>
+    </rule>
+    <!-- Code size rulesets -->
+    <!-- rule ref="rulesets/java/codesize.xml" /-->
+    <rule ref="rulesets/java/codesize.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="100"/>
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/codesize.xml/ExcessiveClassLength">
+        <properties>
+            <property name="minimum" value="500"/>
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/codesize.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="15"/>
+        </properties>
+    </rule>
+    <!-- Controversial rulesets -->
+    <rule ref="rulesets/java/controversial.xml/UnnecessaryConstructor"/>
+    <!-- rule ref="rulesets/java/controversial.xml/NullAssignment" /-->
+    <rule ref="rulesets/java/controversial.xml/DontImportSun"/>
+    <rule ref="rulesets/java/controversial.xml/UnnecessaryParentheses"/>
+    <rule ref="rulesets/java/controversial.xml/AvoidLiteralsInIfCondition"/>
+    <!-- Coupling rulesets -->
+    <rule ref="rulesets/java/coupling.xml/LooseCoupling"/>
+    <!-- Design rulesets -->
+    <rule ref="rulesets/java/design.xml/SimplifyBooleanReturns"/>
+    <rule ref="rulesets/java/design.xml/EqualsNull"/>
+    <rule ref="rulesets/java/design.xml/CompareObjectsWithEquals"/>
+    <rule ref="rulesets/java/design.xml/UseCollectionIsEmpty"/>
+    <rule ref="rulesets/java/design.xml/LogicInversion"/>
+    <!-- Naming rulesets -->
+    <rule ref="rulesets/java/naming.xml/ShortMethodName"/>
+    <rule ref="rulesets/java/naming.xml/MethodNamingConventions"/>
+    <rule ref="rulesets/java/naming.xml/ClassNamingConventions"/>
+    <rule ref="rulesets/java/naming.xml/BooleanGetMethodName"/>
+    <rule ref="rulesets/java/naming.xml/SuspiciousHashcodeMethodName"/>
+    <rule ref="rulesets/java/naming.xml/SuspiciousEqualsMethodName"/>
+    <rule ref="rulesets/java/naming.xml/GenericsNaming"/>
+    <!-- Optimization rulesets -->
+    <rule ref="rulesets/java/optimizations.xml/SimplifyStartsWith"/>
+    <rule ref="rulesets/java/optimizations.xml/UnnecessaryWrapperObjectCreation"/>
+    <rule ref="rulesets/java/optimizations.xml/AddEmptyString"/>
+    <rule ref="rulesets/java/optimizations.xml/PrematureDeclaration"/>
+</ruleset>

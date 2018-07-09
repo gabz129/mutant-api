@@ -1,0 +1,6 @@
+applications:
+- name: mutant-api
+  memory: 2G
+  instances: 1
+  path: target/mutant-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack
