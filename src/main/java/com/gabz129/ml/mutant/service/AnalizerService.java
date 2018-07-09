@@ -26,7 +26,7 @@ public class AnalizerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AnalizerService.class);
 
     private DnaResultRepository dnaResultRepository;
-    private ConcurrentHashMap<Integer, Boolean> resultsCache = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, Boolean> resultsCache = new ConcurrentHashMap<>();
 
     private static final int MIN_SEQ_CHARACTERS = 4;
     private static final int NON_RESULTS = 0;
@@ -51,12 +51,12 @@ public class AnalizerService {
         boolean result = false;
         String formattedDna = Arrays.toString(request.getDna());
 
-        if (resultsCache.containsKey(formattedDna.hashCode())) {
+        if (resultsCache.containsKey(formattedDna)) {
             LOGGER.debug("Found in cache");
-            result = resultsCache.get(formattedDna.hashCode());
+            result = resultsCache.get(formattedDna);
         } else {
             result = isMutant(request.getDna());
-            resultsCache.put(formattedDna.hashCode(), result);
+            resultsCache.put(formattedDna, result);
 
             LOGGER.debug("Saving result");
             Long idResult = (long) formattedDna.hashCode();
