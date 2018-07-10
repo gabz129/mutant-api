@@ -8,6 +8,7 @@ import com.gabz129.ml.mutant.message.Messages;
 import com.gabz129.ml.mutant.repository.DnaResultRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -37,6 +38,7 @@ public class AnalizerService {
      *
      * @param dnaResultRepository the dna result repository
      */
+    @Autowired
     public AnalizerService(final DnaResultRepository dnaResultRepository) {
         this.dnaResultRepository = dnaResultRepository;
     }
